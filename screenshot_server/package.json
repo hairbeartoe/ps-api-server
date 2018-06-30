@@ -1,0 +1,17 @@
+{
+  "name": "screenshot_server",
+  "version": "1.2.0",
+  "description": "",
+  "main": "screenshot_server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "command-line-args": "^5.0.2",
+    "command-line-usage": "^5.0.5",
+    "express": "^4.16.3",
+    "puppeteer": "^1.5.0"
+  }
+}
