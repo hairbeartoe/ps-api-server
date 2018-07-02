@@ -63,7 +63,8 @@ var chromeExePath = options.chrome || '/opt/google/chrome/google-chrome';
     if (process.platform === 'darwin' && !options.chrome) {
         console.log('Running in the MacOS. Launch with default chromium')
         browser = await puppeteer.launch({
-            headless: true
+            headless: true,
+            args: ['--disable-dev-shm-usage']
         })
     } else {
         if (!fs.existsSync(chromeExePath)) {
@@ -73,7 +74,8 @@ var chromeExePath = options.chrome || '/opt/google/chrome/google-chrome';
         console.log('Running with Chrome:', chromeExePath)
         browser = await puppeteer.launch({
             headless: true,
-            executablePath: chromeExePath
+            executablePath: chromeExePath,
+            args: ['--disable-dev-shm-usage']
         })
     }
 })()
