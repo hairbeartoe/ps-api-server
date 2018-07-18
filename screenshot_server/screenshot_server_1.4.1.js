@@ -1,5 +1,5 @@
 /*
-    Screenshot Sevice API  ver. 1.4.2
+    Screenshot Sevice API  ver. 1.4.1
     Exposing an API server that handles requests for taking a screenshot for a URL
  */
 const express = require('express')
@@ -16,7 +16,7 @@ const optionDefinitions = [
 ]
 const sections = [
     {
-        header: 'screenshot_server.js version:1.4.1',
+        header: 'screenshot_server.js version:1.4',
         content: 'Screenshot API service'
     },
     {
@@ -195,8 +195,7 @@ app.get('/png', (request, response) => {
                 if (params.userAgent) await page.setUserAgent(params.userAgent)
                 await page.setViewport({width: params.width, height: 768})
                 try {
-                    await page.goto(params.link)
-                    await page.waitForNavigation({timeout: params.timeout})
+                    await page.goto(params.link, {timeout: params.timeout})
                 } catch (e) {
                     console.log(e.name, e.message)
                 }
